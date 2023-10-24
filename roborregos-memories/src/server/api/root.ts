@@ -1,5 +1,6 @@
 import { exampleRouter } from "rbrgs-memories/server/api/routers/example";
 import { createTRPCRouter } from "rbrgs-memories/server/api/trpc";
+import { photosRouter } from "./routers/photos";
 
 /**
  * This is the primary router for your server.
@@ -8,6 +9,7 @@ import { createTRPCRouter } from "rbrgs-memories/server/api/trpc";
  */
 export const appRouter = createTRPCRouter({
   example: exampleRouter,
+  photos: photosRouter,
 });
 
 // export type definition of API

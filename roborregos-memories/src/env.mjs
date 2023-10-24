@@ -31,6 +31,9 @@ export const env = createEnv({
     // Add ` on ID and SECRET if you want to make sure they're not empty
     DISCORD_CLIENT_ID: z.string(),
     DISCORD_CLIENT_SECRET: z.string(),
+    PROJECT_URL: z.string().min(1),
+    SUPABASE_KEY: z.string().min(1),
+
   },
 
   /**
@@ -53,6 +56,8 @@ export const env = createEnv({
     NEXTAUTH_URL: process.env.NEXTAUTH_URL,
     DISCORD_CLIENT_ID: process.env.DISCORD_CLIENT_ID,
     DISCORD_CLIENT_SECRET: process.env.DISCORD_CLIENT_SECRET,
+    PROJECT_URL: process.env.PROJECT_URL,
+    SUPABASE_KEY: process.env.SUPABASE_KEY,
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially
@@ -63,5 +68,5 @@ export const env = createEnv({
    * Makes it so that empty strings are treated as undefined.
    * `SOME_VAR: z.string()` and `SOME_VAR=''` will throw an error.
    */
-  emptyStringAsUndefined: true,
+  // emptyStringAsUndefined: true,
 });

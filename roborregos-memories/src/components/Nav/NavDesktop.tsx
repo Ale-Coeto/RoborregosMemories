@@ -10,8 +10,8 @@ const NavDesktop = () => {
     return (
         <div className="fixed w-72 h-screen bg-neutral-100 py-10 pl-10">
             <div className="flex flex-col gap-4">
-                {years.map((year) => (
-                    <DropItem years={year} />
+                {years.map((year, key) => (
+                    <DropItem years={year} key ={key}/>
                 ))}
             </div>
             <AuthShowcase />
