@@ -1,3 +1,4 @@
+import Header from "../Header/header";
 import NavDesktop from "./NavDesktop";
 
 const Nav = ({ children }: { children: React.ReactNode }) => {
@@ -5,7 +6,9 @@ const Nav = ({ children }: { children: React.ReactNode }) => {
         <div>
             <NavDesktop />
             <main className="h-full">
-                {children}
+                <Header>
+                    {children}
+                </Header>
             </main>
         </div>
     )

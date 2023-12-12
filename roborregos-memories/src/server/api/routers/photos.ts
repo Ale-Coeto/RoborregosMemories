@@ -18,21 +18,22 @@ export const photosRouter = createTRPCRouter({
     uploadPhoto: publicProcedure
         .input(z.string())
         .mutation(async ({ input }) => {
+            console.log("recieved")
             const base64 = await fetch(input);
             const blob = await base64.blob();
+            // console.log(blob)
 
-            console.log(blob)
-            const { error, data } = await supabase.storage.from('Rbrgs_Memories_Public').upload('/Test/nm', blob)
-            if (error) {
-                // Handle error
-                console.log(error);
-            } else {
-                // Handle success
-                console.log(data);
-            }
-            return {
+            // const { error, data } = await supabase.storage.from('Rbrgs_Memories_Public').upload('/Test/dec', blob)
+            // if (error) {
+            //     // Handle error
+            //     console.log(error);
+            // } else {
+            //     // Handle success
+            //     console.log(data);
+            // }
+            // return {
 
-            };
+            // };
         }),
 
 });

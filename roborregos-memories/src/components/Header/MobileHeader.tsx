@@ -1,7 +1,7 @@
 const MobileHeader = () => {
     return (
         <div className="fixed md:visible">
-            .
+            
         </div>
     )
 }

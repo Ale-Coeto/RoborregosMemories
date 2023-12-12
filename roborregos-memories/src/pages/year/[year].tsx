@@ -3,6 +3,7 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Filter from "rbrgs-memories/components/Filters/Filter";
 import SearchBar from "rbrgs-memories/components/Filters/SearchBar";
 import Header from "rbrgs-memories/components/Header/header";
 import Body from "rbrgs-memories/components/Main/Body";
@@ -21,14 +22,16 @@ const Year = () => {
       <Nav>
         <main className="w-full h-full pl-80">
           <div className="w-full">
-            <Header />
           </div>
 
           <h1 className="text-xl font-bold text-neutral-700 mt-5">
             {year}
           </h1>
 
-          <SearchBar />
+          <div className="flex flex-row gap-2 items-center mt-10">
+            <SearchBar />
+            <Filter label="year" />
+          </div>
 
         </main>
       </Nav>

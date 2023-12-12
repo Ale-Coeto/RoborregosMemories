@@ -9,7 +9,7 @@ const SearchBar = () => {
     }
 
     return (
-        <div className=' mt-4 mr-8 flex flex-row justify-between rounded-lg bg-slate-100 px-1 max-h-18 shadow-0'>
+        <div className='flex flex-row justify-between rounded-full bg-slate-100 px-1 max-h-18 shadow-0'>
 
             <button onClick={handleSearch} className='text-blue-500  font-light ml-2 rounded-md py-1 pr-1'>
                 <IoSearch size={24} />

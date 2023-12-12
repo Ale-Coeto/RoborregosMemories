@@ -4,14 +4,17 @@ import { BsUpload } from 'react-icons/bs';
 import { api } from 'rbrgs-memories/utils/api';
 
 const UploadButton = () => {
-    const { mutateAsync: uploadPhoto } = api.photos.uploadPhoto.useMutation();
+    const uploadPhoto = api.photos.uploadPhoto.useMutation();
     
     const [file, setFile] = useState('');
     const handleUpload = () => {
-        console.log('Upload button clicked', file);
+        // console.log('Upload button clicked', file);
         //     uploadFile(file);
-        if (file)
-            uploadPhoto(file);
+        if (file) {
+            // console.log(file)
+            uploadPhoto.mutate(file);
+            console.log('File uploaded');
+        }
 
     }
 
@@ -26,7 +29,6 @@ const UploadButton = () => {
         reader.onloadend = async () => {
             await setFile(reader.result as string);
         }
-
         
     }
 
